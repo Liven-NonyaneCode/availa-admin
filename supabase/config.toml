@@ -1,0 +1,14 @@
+# Only the pieces the admin Edge Functions need. Deploy into the SAME Supabase project as Availa:
+#   supabase link --project-ref YOUR-PROJECT-REF
+#   supabase functions deploy admin-id-review admin-money admin-user --no-verify-jwt
+# (each function checks the caller is an admin itself, see _shared/admin.ts)
+project_id = "availa-admin"
+
+[functions.admin-id-review]
+verify_jwt = false
+
+[functions.admin-money]
+verify_jwt = false
+
+[functions.admin-user]
+verify_jwt = false
